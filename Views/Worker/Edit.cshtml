@@ -1,0 +1,50 @@
+﻿@model MVCproject.Models.Worker
+
+<form asp-action="Edit" method="post">
+    <div>
+        <label asp-for="hiredOn">Change hire date: </label><br />
+        <input class="form-control" asp-for="hiredOn" />
+        <div>
+            <span asp-validation-for="hiredOn" class="text-danger"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="name">Change name: </label><br />
+        <input class="form-control" asp-for="name" />
+        <div>
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="surname">Change surname: </label><br />
+        <input class="form-control" asp-for="surname" />
+        <div>
+            <span asp-validation-for="surname" class="text-danger"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="age">Change age: </label><br />
+        <input class="form-control" asp-for="age" />
+        <div>
+            <span asp-validation-for="age" class="text-danger"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="contactNumber">Change contact number: </label><br />
+        <input class="form-control" asp-for="contactNumber" />
+        <div>
+            <span asp-validation-for="contactNumber" class="text-danger"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="email">Change email: </label><br />
+        <input class="form-control" asp-for="email" />
+        <div>
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary mt-3">Edit</button>
+    </div>
+
+</form>

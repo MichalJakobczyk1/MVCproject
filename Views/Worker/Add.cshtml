@@ -1,0 +1,50 @@
+﻿@model MVCproject.Models.Worker
+
+<form asp-action="Add" method="post">
+    <div>
+        <label asp-for="hiredOn">Hire date: </label><br />
+        <input class="form-control" asp-for="hiredOn" />
+        <div>
+            <span asp-validation-for="hiredOn" class="text-danger"></span>
+        </div>
+    </div>
+     <div>
+        <label asp-for="name">Name: </label><br />
+        <input class="form-control" asp-for="name" />
+        <div>
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+    </div>
+     <div>
+        <label asp-for="surname">Surname: </label><br />
+        <input class="form-control" asp-for="surname" />
+        <div>
+            <span asp-validation-for="surname" class="text-danger"></span>
+        </div>
+    </div>
+     <div>
+        <label asp-for="age">Age: </label><br />
+        <input class="form-control" asp-for="age" />
+        <div>
+            <span asp-validation-for="age" class="text-danger"></span>
+        </div>
+    </div>
+     <div>
+        <label asp-for="contactNumber">Contact number: </label><br />
+        <input class="form-control" asp-for="contactNumber" />
+        <div>
+            <span asp-validation-for="contactNumber" class="text-danger"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="email">Email: </label><br />
+        <input class="form-control" asp-for="email" />
+        <div>
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary mt-3">Sumbit</button>
+    </div>
+
+</form>
