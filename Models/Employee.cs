@@ -1,24 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace MVCproject.Models
 {
-    public class Employee
+    public class Employee : IdentityUser
     {
-        [HiddenInput]
-        public int id { get; set; }
+        [Key]
+        public string Id { get; set; }
         [Required(ErrorMessage = "Date of hire is required")]
-        public DateTime hiredOn { get; set; }
+        public DateTime HiredOn { get; set; }
         [Required(ErrorMessage = "Name is required")]
-        public string name { get; set; }
+        public string Name { get; set; }
         [Required(ErrorMessage = "Surname is required")]
-        public string surname { get; set; }
+        public string Surname { get; set; }
         [Required(ErrorMessage = "Date of birth is required")]
-        public DateTime dateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         [RegularExpression("^[0-9]*$")]
         [Required(ErrorMessage = "Contact number is required")]
-        public string contactNumber { get; set; }
+        public string ContactNumber { get; set; }
         [RegularExpression(".+\\@.+\\.[a-z]{2,3}")]
-        public string email { get; set; }
+        public string Email { get; set; }
     }
 }

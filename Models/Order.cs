@@ -6,12 +6,12 @@ namespace MVCproject.Models
     public class Order
     {
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; }
         public int Quantity { get; set; }
         public decimal PriceTotal { get; set; }
         public bool IsPaid { get; set; }
         [ForeignKey("Product")]
-        public int ProductId { get; set; }
+        public string ProductId { get; set; }
         public Product Product { get; set; }
     }
 }
