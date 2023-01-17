@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MVCproject.Models
 {
-    public class Worker
+    public class Employee
     {
         [HiddenInput]
         public int id { get; set; }
@@ -13,8 +13,8 @@ namespace MVCproject.Models
         public string name { get; set; }
         [Required(ErrorMessage = "Surname is required")]
         public string surname { get; set; }
-        [Required(ErrorMessage = "Age is required")]
-        public int age { get; set; }
+        [Required(ErrorMessage = "Date of birth is required")]
+        public DateTime dateOfBirth { get; set; }
         [RegularExpression("^[0-9]*$")]
         [Required(ErrorMessage = "Contact number is required")]
         public string contactNumber { get; set; }

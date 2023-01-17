@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Reiwaii\source\repos\2022\ASP\MVCproject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Reiwaii/source/repos/2022/ASP/MVCproject/Views/Employee/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Reiwaii/source/repos/2022/ASP/MVCproject/Views/Employee/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Reiwaii/source/repos/2022/ASP/MVCproject/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Reiwaii/source/repos/2022/ASP/MVCproject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,18 +42,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Reiwaii/source/repos/2022/ASP/MVCproject/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Reiwaii/source/repos/2022/ASP/MVCproject/Views/Worker/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2VyXEFkZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Reiwaii/source/repos/2022/ASP/MVCproject/Views/Worker/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2VyXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Reiwaii/source/repos/2022/ASP/MVCproject/Views/Worker/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2VyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Reiwaii/source/repos/2022/ASP/MVCproject/Views/_ViewImports.cshtml]

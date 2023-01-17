@@ -1,0 +1,8 @@
+﻿namespace MVCproject.Models
+{
+    public static class UserRoles
+    {
+        public const string Admin = "admin";
+        public const string Employee = "Employee";
+    }
+}
