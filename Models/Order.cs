@@ -7,7 +7,7 @@ namespace MVCproject.Models
     {
         [Key]
         public string Id { get; set; }
-        public int Quantity { get; set; }
+        public string Supplier { get; set; }
         public decimal PriceTotal { get; set; }
         public bool IsPaid { get; set; }
         [ForeignKey("Product")]
