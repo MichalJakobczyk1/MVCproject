@@ -13,12 +13,10 @@
                 <div class="col">
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <p class="card-text">@item.DateOfReservation</p>
-                            <p class="card-text">@item.HowManyPeople</p>
+                            <p class="card-text">Reservation at: @item.DateOfReservation</p>
+                            <p class="card-text">For: @item.HowManyPeople people</p>
                         </div>
                         <div class="btn-group">
-                            <a asp-controller="Reservation" asp-action="Detail" asp-route-id="@item.Id"
-                           type="button" class="btn btn-sm btn-outline-secondary">View</a>
                             <a asp-controller="Reservation" asp-action="Edit" asp-route-id="@item.Id"
                            class="btn btn-sm btn-outline-secondary">Edit</a>
                             <a asp-controller="Reservation" asp-action="Delete" asp-route-id="@item.Id"
