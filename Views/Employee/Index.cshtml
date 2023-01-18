@@ -9,13 +9,17 @@
                 <div class="col">
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <p class="card-text">@item.HiredOn</p>
                             <p class="card-text">@item.Name</p>
                             <p class="card-text">@item.Surname</p>
-                            <p class="card-text">@item.DateOfBirth</p>
-                            <p class="card-text">@item.ContactNumber</p>
-                            <p class="card-text">@item.Email</p>
                         </div>
+                            <div class="btn-group">
+                            <a asp-controller="Employee" asp-action="Detail" asp-route-id="@item.Id"
+                                type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                            <a asp-controller="Employee" asp-action="Edit" asp-route-id="@item.Id"
+                                class="btn btn-sm btn-outline-secondary">Edit</a>
+                            <a asp-controller="Employee" asp-action="Delete" asp-route-id="@item.Id"
+                                class="btn btn-sm btn-outline-secondary">Delete</a>
+                            </div>
                     </div>
                 </div>
             }

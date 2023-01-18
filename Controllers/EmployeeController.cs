@@ -35,5 +35,11 @@ namespace MVCproject.Controllers
             _employeeRepository.Add(employee);
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Detail(int id)
+        { 
+            Employee employee = await _employeeRepository.GetByIdAsync(id);
+            return View(employee);
+        }
     }
 }
