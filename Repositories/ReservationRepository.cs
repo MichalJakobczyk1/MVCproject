@@ -34,6 +34,12 @@ namespace MVCproject.Repositories
         {
             return await _context.Reservations.FirstOrDefaultAsync(i => i.Id == id);
         }
+
+        public async Task<Reservation> GetByIdAsyncNoTracking(int id)
+        {
+            return await _context.Reservations.AsNoTracking().FirstOrDefaultAsync(i => i.Id == id);
+        }
+
         public bool Save()
         {
             var saved = _context.SaveChanges();
