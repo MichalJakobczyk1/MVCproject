@@ -53,6 +53,52 @@ namespace MVCproject.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> Edit(int id)
+        {
+            var employee = await _employeeRepository.GetByIdAsync(id);
+            if (employee == null) return View("Error");
+            var employeeVM = new EditEmployeeViewModel
+            {
+                Id = id,
+                Name = employee.Name,
+                Surname = employee.Surname,
+                ContactNumber = employee.ContactNumber,
+                Email = employee.Email,
+            };
+            return View(employeeVM);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditEmployeeViewModel editEmployeeViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Failed to edit employee");
+                return View("Edit", editEmployeeViewModel);
+            }
+
+            var employee = await _employeeRepository.GetByIdAsyncNoTracking(id);
+
+            if (employee != null)
+            {
+                var emp = new Employee
+                {
+                    Id = id,
+                    Name = editEmployeeViewModel.Name,
+                    Surname = editEmployeeViewModel.Surname,
+                    ContactNumber = editEmployeeViewModel.ContactNumber,
+                    Email = editEmployeeViewModel.Email,
+                };
+
+                _employeeRepository.Update(employee);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(editEmployeeViewModel);
+            }
+        }
+
         public async Task<IActionResult> Detail(int id)
         { 
             Employee employee = await _employeeRepository.GetByIdAsync(id);
