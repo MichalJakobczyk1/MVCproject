@@ -36,6 +36,23 @@ namespace MVCproject.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> Delete(int id)
+        {
+            var employeeDetails = await _employeeRepository.GetByIdAsync(id);
+            if (employeeDetails == null) return View("Error");
+            return View(employeeDetails);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteEmployee(int id)
+        {
+            var employeeDetails = await _employeeRepository.GetByIdAsync(id);
+            if (employeeDetails == null) return View("Error");
+
+            _employeeRepository.Delete(employeeDetails);
+            return RedirectToAction("Index");
+        }
+
         public async Task<IActionResult> Detail(int id)
         { 
             Employee employee = await _employeeRepository.GetByIdAsync(id);
