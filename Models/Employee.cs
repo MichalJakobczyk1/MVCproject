@@ -7,7 +7,7 @@ namespace MVCproject.Models
     public class Employee : IdentityUser
     {
         [Key]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [Required(ErrorMessage = "Date of hire is required")]
         public DateTime HiredOn { get; set; }
         [Required(ErrorMessage = "Name is required")]

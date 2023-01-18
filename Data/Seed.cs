@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using MVCproject.Data;
 using MVCproject.Models;
 using System.Diagnostics;
 using System.Net;
@@ -15,46 +16,34 @@ namespace MVCproject.Data
 
                 context.Database.EnsureCreated();
 
-                if (!context.Employees.Any())
+                if (!context.Reservations.Any())
                 {
-                    context.Employees.AddRange(new List<Employee>()
+                    context.Reservations.AddRange(new List<Reservation>()
                     {
-                        new Employee()
+                        new Reservation()
                         {
-                           HiredOn = new DateTime(2018,02,12),
-                           Name = "Steve",
-                           Surname = "Jones",
-                           DateOfBirth = new DateTime(1995,12,24),
-                           ContactNumber = "567823442",
-                           Email = "Jones.business@gmail.com"
-                         },
-                         new Employee()
+                            DateOfReservation = new DateTime(2023,02,02,15,0,0),
+                            HowManyPeople = 12
+                        },
+                         new Reservation()
                         {
-                           HiredOn = new DateTime(2019,05,22),
-                           Name = "John",
-                           Surname = "Smith",
-                           DateOfBirth = new DateTime(1997,05,23),
-                           ContactNumber = "881723909",
-                           Email = "SmithJ123@gmail.com"
-                         }
+                            DateOfReservation = new DateTime(2023,02,05,18,0,0),
+                            HowManyPeople = 8
+                        },
                     });
                     context.SaveChanges();
                 }
-                if (!context.Orders.Any())
+                //Races
+                if (!context.RegularCustomers.Any())
                 {
-                    context.Orders.AddRange(new List<Order>()
+                    context.RegularCustomers.AddRange(new List<RegularCustomer>()
                     {
-                        new Order()
+                        new RegularCustomer()
                         {
-                           Supplier = "Makro",
-                           PriceTotal = 350,
-                           IsPaid = true,
-                        },
-                        new Order()
-                        {
-                           Supplier = "Makro",
-                           PriceTotal = 500,
-                           IsPaid = true,
+                            Name = "John",
+                            Surname = "Wick",
+                            SinceWhen = new DateTime(2021,01,17),
+                            Nip = "5678490871"
                         },
                     });
                     context.SaveChanges();
@@ -62,50 +51,62 @@ namespace MVCproject.Data
             }
         }
 
-        public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
-        {
-            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
-            {
-                //Roles
-                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        //public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
+        //{
+        //    using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+        //    {
+        //        //Roles
+        //        var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-                if (!await roleManager.RoleExistsAsync(UserRoles.Manager))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Manager));
-                if (!await roleManager.RoleExistsAsync(UserRoles.Employee))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Employee));
+        //        if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+        //            await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+        //        if (!await roleManager.RoleExistsAsync(UserRoles.User))
+        //            await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
 
-                //Users
-                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<Employee>>();
-                string managerUserEmail = "Jones.business@gmail.com";
+        //        //Users
+        //        var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+        //        string adminUserEmail = "teddysmithdeveloper@gmail.com";
 
-                var managerUser = await userManager.FindByEmailAsync(managerUserEmail);
-                if (managerUser == null)
-                {
-                    var newManagerUser = new Employee()
-                    {
-                        UserName = "JonesSteve",
-                        Email = managerUserEmail,
-                        EmailConfirmed = true,
-                    };
-                    await userManager.CreateAsync(newManagerUser, "Manager123");
-                    await userManager.AddToRoleAsync(newManagerUser, UserRoles.Manager);
-                }
+        //        var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
+        //        if (adminUser == null)
+        //        {
+        //            var newAdminUser = new AppUser()
+        //            {
+        //                UserName = "teddysmithdev",
+        //                Email = adminUserEmail,
+        //                EmailConfirmed = true,
+        //                Address = new Address()
+        //                {
+        //                    Street = "123 Main St",
+        //                    City = "Charlotte",
+        //                    State = "NC"
+        //                }
+        //            };
+        //            await userManager.CreateAsync(newAdminUser, "Coding@1234?");
+        //            await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
+        //        }
 
-                string appUserEmail = "SmithJ123@gmail.com";
+        //        string appUserEmail = "user@etickets.com";
 
-                var appUser = await userManager.FindByEmailAsync(appUserEmail);
-                if (appUser == null)
-                {
-                    var newAppUser = new Employee()
-                    {
-                        UserName = "Smith",
-                        Email = appUserEmail,
-                        EmailConfirmed = true,
-                    };
-                    await userManager.CreateAsync(newAppUser, "Coding@1234?");
-                    await userManager.AddToRoleAsync(newAppUser, UserRoles.Employee);
-                }
-            }
-        }
+        //        var appUser = await userManager.FindByEmailAsync(appUserEmail);
+        //        if (appUser == null)
+        //        {
+        //            var newAppUser = new AppUser()
+        //            {
+        //                UserName = "app-user",
+        //                Email = appUserEmail,
+        //                EmailConfirmed = true,
+        //                Address = new Address()
+        //                {
+        //                    Street = "123 Main St",
+        //                    City = "Charlotte",
+        //                    State = "NC"
+        //                }
+        //            };
+        //            await userManager.CreateAsync(newAppUser, "Coding@1234?");
+        //            await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
+        //        }
+        //    }
+        //}
     }
 }
