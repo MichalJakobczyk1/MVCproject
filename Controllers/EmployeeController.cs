@@ -90,7 +90,7 @@ namespace MVCproject.Controllers
                     Email = editEmployeeViewModel.Email,
                 };
 
-                _employeeRepository.Update(employee);
+                _employeeRepository.Update(emp);
                 return RedirectToAction("Index");
             }
             else

@@ -77,14 +77,14 @@ namespace MVCproject.Controllers
 
             if (reservation != null)
             {
-                var emp = new Reservation
+                var res = new Reservation
                 {
                     Id = id,
-                    HowManyPeople = reservation.HowManyPeople,
-                    DateOfReservation = reservation.DateOfReservation,
+                    HowManyPeople = editReservationViewModel.HowManyPeople,
+                    DateOfReservation = editReservationViewModel .DateOfReservation,
                 };
 
-                _reservationRepository.Update(reservation);
+                _reservationRepository.Update(res);
                 return RedirectToAction("Index");
             }
             else
