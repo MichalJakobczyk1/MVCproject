@@ -1,0 +1,28 @@
+﻿@model Product
+
+<div class="container">
+    <h1 class="my-4">
+        Page Heading
+        <small>Secondary Text</small>
+    </h1>
+    <div class="row">
+        <div class="col-md-4">
+            <h3 class="my-3">@Model.Name</h3>
+            <h4>
+                <ul>
+                    <li>@Model.Name</li>
+                    <li>@Model.Category</li>
+                    <li>@Model.Description</li>
+                </ul>
+            </h4>
+            <h4>
+                <ul>
+                    <li>@Model.Price</li>
+                    <li>@Model.Volume</li>
+                    <li>@Model.AlcVolume</li>
+                </ul>
+            </h4>
+        </div>
+
+    </div>
+</div>

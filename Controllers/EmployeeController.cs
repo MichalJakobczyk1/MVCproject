@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using MVCproject.Interfaces;
 using MVCproject.Models;
+using MVCproject.Repositories;
+using MVCproject.Services;
 using MVCproject.ViewModels;
 using System.Net;
 
@@ -26,14 +28,21 @@ namespace MVCproject.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Employee employee)
+        public async Task<IActionResult> Create(CreateEmployeeViewModel createEmployeeViewModel)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(employee);
+                var employee = new Employee
+                {
+                    Name = createEmployeeViewModel.Name,
+                    Surname = createEmployeeViewModel.Surname,
+                    ContactNumber = createEmployeeViewModel.ContactNumber,
+                    Email = createEmployeeViewModel.Email,
+                };
+                _employeeRepository.Add(employee);
+                return RedirectToAction("Index");
             }
-            _employeeRepository.Add(employee);
-            return RedirectToAction("Index");
+            return View(createEmployeeViewModel);
         }
 
         public async Task<IActionResult> Delete(int id)
@@ -57,7 +66,7 @@ namespace MVCproject.Controllers
         {
             var employee = await _employeeRepository.GetByIdAsync(id);
             if (employee == null) return View("Error");
-            var employeeVM = new EditEmployeeViewModel
+            var employeeViewModel = new EditEmployeeViewModel
             {
                 Id = id,
                 Name = employee.Name,
@@ -65,7 +74,7 @@ namespace MVCproject.Controllers
                 ContactNumber = employee.ContactNumber,
                 Email = employee.Email,
             };
-            return View(employeeVM);
+            return View(employeeViewModel);
         }
 
         [HttpPost]

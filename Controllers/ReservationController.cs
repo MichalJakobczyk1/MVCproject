@@ -25,14 +25,19 @@ namespace MVCproject.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Reservation reservation)
+        public async Task<IActionResult> Create(CreateReservationViewModel createReservationViewModel)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(reservation);
+                var reservation = new Reservation
+                {
+                    HowManyPeople = createReservationViewModel.HowManyPeople,
+                    DateOfReservation = createReservationViewModel.DateOfReservation,
+                };
+                _reservationRepository.Add(reservation);
+                return RedirectToAction("Index");
             }
-            _reservationRepository.Add(reservation);
-            return RedirectToAction("Index");
+            return View(createReservationViewModel);
         }
 
         public async Task<IActionResult> Delete(int id)
