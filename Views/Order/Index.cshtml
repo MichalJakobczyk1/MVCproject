@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Order>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="btn-group">
+            <a asp-controller="Order" asp-action="PlaceOrder"
+               type="button" class="btn btn-sm btn-outline-secondary">Palce new order</a>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">@item.Id</p>
+                            <p class="card-text">@item.Surname</p>
+                        </div>
+                        <div class="btn-group">
+                            <a asp-controller="Employee" asp-action="Detail" asp-route-id="@item.Id"
+                           type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                            <a asp-controller="Employee" asp-action="Edit" asp-route-id="@item.Id"
+                           class="btn btn-sm btn-outline-secondary">Edit</a>
+                            <a asp-controller="Employee" asp-action="Delete" asp-route-id="@item.Id"
+                           class="btn btn-sm btn-outline-secondary">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

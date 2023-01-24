@@ -1,11 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MVCproject.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MVCproject.Models
+namespace MVCproject.ViewModels
 {
-    public class Order
+    public class PlaceOrderViewModel
     {
-        [Key]
         public int Id { get; set; }
         public string Supplier { get; set; }
         public decimal Quantity { get; set; }
