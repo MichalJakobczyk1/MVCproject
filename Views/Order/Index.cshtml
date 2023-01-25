@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Order>
+﻿@*@model IEnumerable<Order>
 
 <div class="album py-5 bg-light">
     <div class="container">
@@ -14,7 +14,6 @@
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <p class="card-text">@item.Id</p>
-                            <p class="card-text">@item.Surname</p>
                         </div>
                         <div class="btn-group">
                             <a asp-controller="Employee" asp-action="Detail" asp-route-id="@item.Id"
@@ -29,4 +28,4 @@
             }
         </div>
     </div>
-</div>
+</div>*@

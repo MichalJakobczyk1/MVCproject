@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "axlQkoc7eRngdJ+tVfG47MK+WfsFo/3eOawmpEEkpzY=",
+  "Hash": "hQHn17juYY4vSR/bvdR1BxUjWTcj8ZNsPmLyicIrD6E=",
   "Source": "MVCproject",
   "BasePath": "_content/MVCproject",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\img\\bg.jpg",
+      "SourceId": "MVCproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\",
+      "BasePath": "_content/MVCproject",
+      "RelativePath": "img/bg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bg.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\img\\emp.png",
+      "SourceId": "MVCproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\",
+      "BasePath": "_content/MVCproject",
+      "RelativePath": "img/emp.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\emp.png"
     },
     {
       "Identity": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\js\\site.js",

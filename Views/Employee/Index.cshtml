@@ -1,32 +1,18 @@
 ﻿@model IEnumerable<Employee>
-
-<div class="album py-5 bg-light">
-    <div class="container">
-        <div class="btn-group">
-            <a asp-controller="Employee" asp-action="Create"
-            type="button" class="btn btn-sm btn-outline-secondary">Add Employee</a>
-        </div>
-
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            @foreach (var item in Model)
-            {
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <p class="card-text">@item.Name</p>
-                            <p class="card-text">@item.Surname</p>
-                        </div>
-                            <div class="btn-group">
-                            <a asp-controller="Employee" asp-action="Detail" asp-route-id="@item.Id"
-                                type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                            <a asp-controller="Employee" asp-action="Edit" asp-route-id="@item.Id"
-                                class="btn btn-sm btn-outline-secondary">Edit</a>
-                            <a asp-controller="Employee" asp-action="Delete" asp-route-id="@item.Id"
-                                class="btn btn-sm btn-outline-secondary">Delete</a>
-                            </div>
+<main class="main">
+    <a class="button__emp" asp-controller="Employee" asp-action="Create">Add employee</a>
+    <section class="section__employees">
+        @foreach (var item in Model)
+        {
+                <div class="container">
+                    <img class="container__image" src="/img/emp.png" />
+                    <p class="container__paragraph">@item.Name @item.Surname</p>
+                    <div class="container__buttons">
+                        <a class="container__button container__button--first" asp-controller="Employee" asp-action="Detail" asp-route-id="@item.Id">View</a>
+                        <a class="container__button" asp-controller="Employee" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="container__button container__button--second" asp-controller="Employee" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                     </div>
                 </div>
-            }
-        </div>
-    </div>
-</div>
+        }
+    </section>
+</main>

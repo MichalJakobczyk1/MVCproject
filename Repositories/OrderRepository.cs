@@ -25,7 +25,7 @@ namespace MVCproject.Repositories
             return await _context.Orders.ToListAsync();
         }
 
-        public Task<Order> GetByIdAsync(int id)
+        public async Task<Order> GetByIdAsync(int id)
         {
             return await _context.Orders.FirstOrDefaultAsync(i => i.Id == id);
         }

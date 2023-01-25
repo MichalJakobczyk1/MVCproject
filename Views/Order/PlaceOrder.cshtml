@@ -1,16 +1,16 @@
 ﻿@using MVCproject.Data.Enum;
 @using MVCproject.ViewModels;
 @using MVCproject.Models
-@model IEnumerable<Products>
+@model IEnumerable<Product>
 
-<h1>Place Order</h1>
+@*<h1>Place Order</h1>
 <form method="post" asp-action="Create" enctype="multipart/form-data">
     <div class="form-group">
-        <label asp-for="Product">Category</label>
+        <label asp-for="Category">Category</label>
         <select asp-for="P" asp-items="@Html.GetEnumSelectList<Products>()" class="form-control form-control-lg">
             <option>--Select--</option>
         </select>
         <span asp-validation-for="Category" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</form>*@
