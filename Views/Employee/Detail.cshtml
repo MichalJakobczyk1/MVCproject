@@ -1,26 +1,24 @@
 ﻿@model Employee
 
-<div class="container">
-    <h1 class="my-4">
-        Page Heading
-        <small>Secondary Text</small>
-    </h1>
-    <div class="row">
-        <div class="col-md-4">
-            <h3 class="my-3">@Model.Name @Model.Surname</h3>
-            <h4>
-            <ul>
-                <li>@Model.DateOfBirth</li>
-                <li>@Model.HiredOn</li>
-            </ul>
-            </h4>
-            <h4>
-            <ul>
-                <li>@Model.Email</li>
-                <li>@Model.ContactNumber</li>
-            </ul>
-            </h4>
+<main class="main">
+    <section class="section__detail">
+        <div class="container__overview">
+            <image class="overview__image" src="/img/emp.png" />
+            <p class="paragraph__overview">@Model.Name @Model.Surname</p>
         </div>
-
-    </div>
-</div>
+        <div class="container__info">
+            <p class="paragraph__detail">
+                <strong class="paragraph__strong">Date of birth: </strong> @Model.DateOfBirth
+            </p>
+            <p class="paragraph__detail">
+                <strong class="paragraph__strong">Date of hire: </strong> @Model.HiredOn
+            </p>
+            <p class="paragraph__detail">
+                <strong class="paragraph__strong">Email address: </strong> @Model.Email
+            </p>
+            <p class="paragraph__detail">
+                <strong class="paragraph__strong">Numer kontaktowy: </strong> @Model.ContactNumber
+            </p>
+        </div>
+    </section>
+</main>

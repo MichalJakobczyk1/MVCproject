@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hQHn17juYY4vSR/bvdR1BxUjWTcj8ZNsPmLyicIrD6E=",
+  "Hash": "/OWL3FVz5MojpDzFWb/4Zua/JcWTvF/BY5V2US3YCpI=",
   "Source": "MVCproject",
   "BasePath": "_content/MVCproject",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\img\\bartender.jpg",
+      "SourceId": "MVCproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\",
+      "BasePath": "_content/MVCproject",
+      "RelativePath": "img/bartender.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bartender.jpg"
     },
     {
       "Identity": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\img\\bg.jpg",

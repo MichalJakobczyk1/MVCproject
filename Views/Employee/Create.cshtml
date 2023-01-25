@@ -1,39 +1,60 @@
 ﻿@model Employee
 
-<form method="post" asp-action="Create" enctype="multipart/form-data">
-    <input type="hidden" id="AppUserId" name="AppUserId" asp-for="Id" />
-    <div class="form-group">
-        <label asp-for="HiredOn">HiredOn</label>
-        <input asp-for="HiredOn" class=" form-control" placeholder="HiredOn">
-        <span asp-validation-for="HiredOn" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Name">Name</label>
-        <input asp-for="Name" class="form-control" placeholder="Name">
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Surname">Surname</label>
-        <input asp-for="Surname" class="form-control form-control-lg" placeholder="Surname">
-        <span asp-validation-for="Surname" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="DateOfBirth">DateOfBirth</label>
-        <input asp-for="DateOfBirth" class="form-control" placeholder="DateOfBirth">
-        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="ContactNumber">Contact Number</label>
-        <input asp-for="ContactNumber" class="form-control" placeholder="ContactNumber">
-        <span asp-validation-for="ContactNumber" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Email">Email</label>
-        <input asp-for="Email" class="form-control" placeholder="Email">
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-    <div class="form-check">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<main class="main">
+    <section class="section__form">
+        <div class="container__content">
+            <div class="emp__image"></div>
+            <div class="emp__description">
+                <p class="container__paragraph">Register new employee</p>
+            </div>
+        </div>
+        <form method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="container__form">
+                <div class="form__tile">
+                    <input type="hidden"
+                           id="AppUserId"
+                           name="AppUserId"
+                           asp-for="Id" />
+                    <label class="form__label" asp-for="HiredOn">Employee hired on:</label>
+                    <input asp-for="HiredOn"
+                           class="form__input"
+                           placeholder="Select date..." />
+                    <span asp-validation-for="HiredOn" class="text-danger"></span>
+                </div>
+                <div class="form__tile">
+                    <label class="form__label" asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form__input" placeholder="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form__tile">
+                    <label class="form__label" asp-for="Surname">Surname</label>
+                    <input asp-for="Surname"
+                           class="form__input"
+                           placeholder="Surname" />
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+                <div class="form__tile">
+                    <label class="form__label" asp-for="DateOfBirth">Date of birth</label>
+                    <input asp-for="DateOfBirth"
+                           class="form__input"
+                           placeholder="DateOfBirth" />
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form__tile">
+                    <label class="form__label" asp-for="ContactNumber">Contact Number</label>
+                    <input asp-for="ContactNumber"
+                           class="form__input"
+                           placeholder="ContactNumber" />
+                    <span asp-validation-for="ContactNumber"
+                          class="text-danger"></span>
+                </div>
+                <div class="form__tile">
+                    <label class="form__label" asp-for="Email">Email</label>
+                    <input asp-for="Email" class="form__input" placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <button type="submit" class="form__sumbit">Submit</button>
+        </div>
+        </form>
+    </section>
+</main>
