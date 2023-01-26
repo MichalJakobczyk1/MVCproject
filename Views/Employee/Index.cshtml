@@ -1,17 +1,29 @@
 ﻿@model IEnumerable<Employee>
 <main class="main">
     <a class="button__emp" asp-controller="Employee" asp-action="Create">Add employee</a>
-    <form asp-controller="Employee" asp-action="Employees" method="get">
-        <div class="mb-3">
-            <label for="Name" class="form-label">Name</label>
-            <input id="Name" type="text" class="form-control" name="Name" />
+
+    <form asp-controller="Employee" asp-action="Search" method="get">
+        <div class="container">
+            <div class="form__tile">
+                <label for="Name" class="form__label">Name</label>
+                <input id="Name" type="text" class="form__input" name="Name" />
+            </div>
+            <div class="form__tile">
+                <label for="Surname" class="form__label">Surname</label>
+                <input id="Surname" type="text" class="form__input" name="Surname" />
+            </div>
+            <button type="submit" class="form__sumbit">Search</button>
         </div>
-        <div class="mb-3">
-            <label for="Surname" class="form-label">Surname</label>
-            <input id="Surname" type="text" class="form-control" name="Surname" />
-        </div>
-        <input class="btn btn-dark mb-3" type="submit" value="Filter" />
     </form>
+
+    <form asp-controller="Employee" asp-action="OrderByName" method="get">
+            <button type="submit" class="form__sumbit">Order by name</button>
+    </form>
+
+    <form asp-controller="Employee" asp-action="OrderBySurname" method="get">
+        <button type="submit" class="form__sumbit">Order by Surname</button>
+    </form>
+
     <section class="section__employees">
         @foreach (var item in Model)
         {

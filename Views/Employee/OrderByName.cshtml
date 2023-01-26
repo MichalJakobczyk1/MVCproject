@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Employee>
+<main class="main">
+
+    <a class="button__emp" asp-controller="Employee" asp-action="Create">Add employee</a>
+
+    <form asp-controller="Employee" asp-action="Employees" method="get">
+         <div class="container">
+            <div class="form__tile">
+                <label for="Name" class="form__label">Name</label>
+                <input id="Name" type="text" class="form__input" name="Name" />
+            </div>
+            <div class="form__tile">
+                <label for="Surname" class="form__label">Surname</label>
+                <input id="Surname" type="text" class="form__input" name="Surname" />
+            </div>
+            <button type="submit" class="form__sumbit">Search</button>
+        </div>
+    </form>
+
+    <section class="section__employees">
+        @foreach (var item in Model)
+        {
+            <div class="container">
+                <img class="container__image" src="/img/emp.png" />
+                <p class="container__paragraph">@item.Name @item.Surname</p>
+                <div class="container__buttons">
+                    <a class="container__button container__button--first" asp-controller="Employee" asp-action="Detail" asp-route-id="@item.Id">View</a>
+                    <a class="container__button" asp-controller="Employee" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="container__button container__button--second" asp-controller="Employee" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
+            </div>
+        }
+    </section>
+</main>

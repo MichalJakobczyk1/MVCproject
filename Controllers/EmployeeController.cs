@@ -118,7 +118,7 @@ namespace MVCproject.Controllers
             return View(employee);
         }
 
-        public async Task<IActionResult> Employees(string Name, string Surname)
+        public async Task<IActionResult> Search(string Name, string Surname)
         {
             var employee = from m in _context.Employees
                            select m;
@@ -134,6 +134,16 @@ namespace MVCproject.Controllers
             }
 
             return View(employee.ToList());
+        }
+
+        public async Task<IActionResult> OrderByName()
+        {
+            return View(_context.Employees.OrderByDescending(e => e.Name).ToList());
+        }
+
+        public async Task<IActionResult> OrderBySurname()
+        {
+            return View(_context.Employees.OrderByDescending(e => e.Surname).ToList());
         }
     }
 }
