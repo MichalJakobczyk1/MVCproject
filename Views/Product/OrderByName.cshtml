@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Product>
 
 <main class="main">
-       <section class="section__buttons">
+    <section class="section__buttons">
         <a asp-controller="Product" asp-action="Create"
            type="button" class="button__emp">Add Product</a>
 
@@ -14,7 +14,7 @@
                 <button type="submit" class="form__sumbit">Search</button>
             </div>
         </form>
-        
+
         <form asp-controller="Product" asp-action="OrderByName" method="get">
             <button type="submit" class="form__sumbit__emp">Order by name</button>
         </form>

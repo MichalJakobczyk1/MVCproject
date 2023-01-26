@@ -11,6 +11,6 @@ namespace MVCproject.ViewModels
         public Suppliers Supplier { get; set; }
         public decimal Quantity { get; set; }
         public bool IsPaid { get; set; }
-        public IEnumerable<Product> ProductsList { get; set; }
+        public Product ProductsList { get; set; }
     }
 }

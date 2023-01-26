@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using MVCproject.Data;
+using MVCproject.Data.Enum;
 using MVCproject.Interfaces;
 using MVCproject.Models;
 using MVCproject.Repositories;
@@ -11,10 +14,12 @@ namespace MVCproject.Controllers
     {
         private readonly IProductRepository _productRepository;
         private readonly IPhotoService _photoService;
-        public ProductController(IProductRepository productRepository, IPhotoService photoService)
+        private readonly AppDbContext _context;
+        public ProductController(IProductRepository productRepository, IPhotoService photoService,AppDbContext context)
         {
             _productRepository = productRepository;
             _photoService = photoService;
+            _context = context;
         }
         public async Task<IActionResult> Index()
         {
@@ -134,6 +139,27 @@ namespace MVCproject.Controllers
         {
             Product product = await _productRepository.GetByIdAsync(id);
             return View(product);
+        }
+        public async Task<IActionResult> Search(string name, Products category)
+        {
+            var product = from m in _context.Products
+                           select m;
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                product = product.Where(x => x.Name!.Contains(name));
+            }
+
+            return View(product.ToList());
+        }
+        public async Task<IActionResult> OrderByName()
+        {
+            return View(_context.Products.OrderByDescending(p => p.Name).ToList());
+        }
+
+        public async Task<IActionResult> OrderByCategory()
+        {
+            return View(_context.Products.OrderByDescending(p => p.Category).ToList());
         }
     }
 

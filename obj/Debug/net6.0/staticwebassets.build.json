@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8aPWBAK/II5EO62gyHVGeKCc5YeUZeZ6YecONxaDrxo=",
+  "Hash": "WC6KoZr6LwHyy27NHOEj3hlkc1OXFfJl7O9T/y39+No=",
   "Source": "MVCproject",
   "BasePath": "_content/MVCproject",
   "Mode": "Default",
@@ -219,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\res-create.png"
+    },
+    {
+      "Identity": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\img\\woodford.jpg",
+      "SourceId": "MVCproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\",
+      "BasePath": "_content/MVCproject",
+      "RelativePath": "img/woodford.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\woodford.jpg"
     },
     {
       "Identity": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\js\\site.js",

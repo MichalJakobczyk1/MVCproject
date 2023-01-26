@@ -14,6 +14,6 @@ namespace MVCproject.Models
         public bool IsPaid { get; set; }
         [ForeignKey("Product")]
         public int ProductId { get; set; }
-        public IEnumerable<Product> ProductsList { get; set; }
+        public Product ProductsList { get; set; }
     }
 }

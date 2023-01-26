@@ -118,19 +118,19 @@ namespace MVCproject.Controllers
             return View(employee);
         }
 
-        public async Task<IActionResult> Search(string Name, string Surname)
+        public async Task<IActionResult> Search(string name, string surname)
         {
             var employee = from m in _context.Employees
                            select m;
 
-            if (!string.IsNullOrEmpty(Name))
+            if (!string.IsNullOrEmpty(name))
             {
-                employee = employee.Where(x => x.Name!.Contains(Name));
+                employee = employee.Where(x => x.Name!.Contains(name));
             }
 
-            if (!string.IsNullOrEmpty(Surname))
+            if (!string.IsNullOrEmpty(surname))
             {
-                employee = employee.Where(x => x.Surname!.Contains(Surname));
+                employee = employee.Where(x => x.Surname!.Contains(surname));
             }
 
             return View(employee.ToList());
