@@ -1,20 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MVCproject.Data;
 using MVCproject.Interfaces;
 using MVCproject.Models;
 using MVCproject.Repositories;
 using MVCproject.Services;
 using MVCproject.ViewModels;
 using System.Net;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MVCproject.Controllers
 {
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
-        public EmployeeController(IEmployeeRepository employeeRepository)
+        private readonly AppDbContext _context;
+        public EmployeeController(IEmployeeRepository employeeRepository, AppDbContext context)
         {
             _employeeRepository = employeeRepository;
+            _context = context;
         }
 
         public async Task<IActionResult> Index()
@@ -112,6 +116,24 @@ namespace MVCproject.Controllers
         { 
             Employee employee = await _employeeRepository.GetByIdAsync(id);
             return View(employee);
+        }
+
+        public async Task<IActionResult> Employees(string Name, string Surname)
+        {
+            var employee = from m in _context.Employees
+                           select m;
+
+            if (!string.IsNullOrEmpty(Name))
+            {
+                employee = employee.Where(x => x.Name!.Contains(Name));
+            }
+
+            if (!string.IsNullOrEmpty(Surname))
+            {
+                employee = employee.Where(x => x.Surname!.Contains(Surname));
+            }
+
+            return View(employee.ToList());
         }
     }
 }

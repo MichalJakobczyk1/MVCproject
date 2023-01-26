@@ -9,6 +9,37 @@ namespace MVCproject.Data
 {
     public class Seed
     {
+        public static void SeedData(IApplicationBuilder applicationBuilder)
+        {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
+
+                context.Database.EnsureCreated();
+
+                if (!context.RegularCustomers.Any())
+                {
+                    context.RegularCustomers.AddRange(new List<RegularCustomer>()
+                    {
+                        new RegularCustomer()
+                        {
+                            Name = "John",
+                            Surname = "Wick",
+                            SinceWhen = new DateTime(12,12,2008),
+                            Nip = "67893412"
+                         },
+                        new RegularCustomer()
+                        {
+                            Name = "Jeff",
+                            Surname = "Brown",
+                            SinceWhen = new DateTime(8,6,2010),
+                            Nip = "78931456"
+                         },
+                    });
+                    context.SaveChanges();
+                }
+            }
+        }
         public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
         {
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())

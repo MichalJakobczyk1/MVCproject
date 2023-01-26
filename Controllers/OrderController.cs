@@ -33,7 +33,8 @@ namespace MVCproject.Controllers
             if (ModelState.IsValid)
             {
                 var order = new Order
-                {
+                { 
+                    DateOfOrder = DateTime.Now,
                     Quantity = placeOrderViewModel.Quantity,
                     IsPaid = false,
                 };
