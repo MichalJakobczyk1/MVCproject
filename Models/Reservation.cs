@@ -11,6 +11,7 @@ namespace MVCproject.Models
         public DateTime DateOfReservation { get; set; }
 
         [Required(ErrorMessage = "Quantity of people is required")]
+        [RegularExpression("^[0-9]*$")]
         public int HowManyPeople { get; set; }
     }
 }

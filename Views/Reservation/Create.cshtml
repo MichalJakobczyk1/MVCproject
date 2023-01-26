@@ -1,16 +1,33 @@
 ﻿@model Reservation
 
-<form method="post" asp-action="Create" enctype="multipart/form-data">
-    <input type="hidden" id="AppUserId" name="AppUserId" asp-for="Id" />
-    <div class="form-group">
-        <label asp-for="DateOfReservation">Date of Reservation</label>
-        <input asp-for="DateOfReservation" class=" form-control" placeholder="Date">
-        <span asp-validation-for="DateOfReservation" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="HowManyPeople">How many people</label>
-        <input asp-for="HowManyPeople" class="form-control" placeholder="HowManyPeople">
-        <span asp-validation-for="HowManyPeople" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<main class="main">
+    <section class="section__form">
+        <div class="container__content">
+            <div class="res__image"></div>
+            <div class="emp__description">
+                <p class="container__paragraph">Add new reservation</p>
+            </div>
+        </div>
+        <form method="post" asp-action="Create" enctype="multipart/form-data">
+            <div class="container__form">
+                <div class="form__tile">
+                    <input type="hidden"
+                           id="AppUserId"
+                           name="AppUserId"
+                           asp-for="Id" />
+                    <label class="form__label" asp-for="DateOfReservation">Select date of reservation</label>
+                    <input asp-for="DateOfReservation"
+                           class="form__input"
+                           placeholder="Select date..." />
+                    <span asp-validation-for="DateOfReservation" class="text-danger"></span>
+                </div>
+                <div class="form__tile">
+                    <label class="form__label" asp-for="HowManyPeople">Select number of people</label>
+                    <input asp-for="HowManyPeople" class="form__input" placeholder="Number of people..." />
+                    <span asp-validation-for="HowManyPeople" class="text-danger"></span>
+                </div>
+                <button type="submit" class="form__sumbit">Submit</button>
+            </div>
+        </form>
+    </section>
+</main>

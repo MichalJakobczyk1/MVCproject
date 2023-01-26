@@ -280,6 +280,39 @@ a {
     font-size: 3vh;
 }
 
+.section__reservation{
+    min-width: 80vw;
+    min-height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container__reservation {
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+    width: 13vw;
+    height: 30vh;
+    background-color: aliceblue;
+    border-radius: 5%;
+    border: 3px solid #1b263b;
+}
+
+.paragraph__reservation {
+    font-size: 2vh;
+    font-weight: 700;
+    min-height: 15%;
+    text-align: center;
+}
+
+.res__image {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5%;
+    background-image: url("/img/res-create.png");
+    background-size: cover;
+}
+
 .footer {
     grid-area: footer;
     font-size: 3vh;

@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\img\\emp.png"
     },
     {
+      "Id": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\img\\res-create.png",
+      "PackagePath": "staticwebassets\\img\\res-create.png"
+    },
+    {
+      "Id": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\img\\res.png",
+      "PackagePath": "staticwebassets\\img\\res.png"
+    },
+    {
       "Id": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
