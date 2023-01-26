@@ -1,28 +1,25 @@
 ﻿@model Product
 
-<div class="container">
-    <h1 class="my-4">
-        Page Heading
-        <small>Secondary Text</small>
-    </h1>
-    <div class="row">
-        <div class="col-md-4">
-            <h3 class="my-3">@Model.Name</h3>
-            <h4>
-                <ul>
-                    <li>@Model.Name</li>
-                    <li>@Model.Category</li>
-                    <li>@Model.Description</li>
-                </ul>
-            </h4>
-            <h4>
-                <ul>
-                    <li>@Model.Price</li>
-                    <li>@Model.Volume</li>
-                    <li>@Model.AlcVolume</li>
-                </ul>
-            </h4>
+<main class="main">
+    <section class="section__detail">
+        <div class="container__overview">
+            <image class="product-overview__image" src=@Model.Image />
+            <p class="paragraph__overview">@Model.Name</p>
+            <p class="paragraph__overview">@Model.Category</p>
         </div>
-
-    </div>
-</div>
+        <div class="container__info">
+            <p class="paragraph__detail">
+                <strong class="paragraph__strong">Description: </strong> @Model.Description
+            </p>
+            <p class="paragraph__detail">
+                <strong class="paragraph__strong">Price: </strong> @Model.Price zł
+            </p>
+            <p class="paragraph__detail">
+                <strong class="paragraph__strong">Volume: </strong> @Model.Volume ml
+            </p>
+            <p class="paragraph__detail">
+                <strong class="paragraph__strong">AlcVolume: </strong> @Model.AlcVolume %
+            </p>
+        </div>
+    </section>
+</main>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6HH6Ld6BTrVfPZpwGYdLpkXDRFSQ2/rZMEx1913DpFg=",
+  "Hash": "WkkupRybaYPB55KH289e9FdpiuYCpiPz9KpizGh2yP0=",
   "Source": "MVCproject",
   "BasePath": "_content/MVCproject",
   "Mode": "Default",
@@ -134,6 +134,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\emp.png"
+    },
+    {
+      "Identity": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\img\\havana.jfif",
+      "SourceId": "MVCproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\",
+      "BasePath": "_content/MVCproject",
+      "RelativePath": "img/havana.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\havana.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\img\\products.jpeg",
+      "SourceId": "MVCproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\",
+      "BasePath": "_content/MVCproject",
+      "RelativePath": "img/products.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\products.jpeg"
     },
     {
       "Identity": "C:\\Users\\Reiwaii\\source\\repos\\2022\\ASP\\MVCproject\\wwwroot\\img\\res.png",

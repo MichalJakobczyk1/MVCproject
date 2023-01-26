@@ -1,36 +1,24 @@
 ﻿@model IEnumerable<Product>
 
-<div class="album py-5 bg-light">
-    <div class="container">
-        <div class="btn-group">
-            <a asp-controller="Product" asp-action="Create"
-               type="button" class="btn btn-sm btn-outline-secondary">Add Product</a>
-        </div>
-
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            @foreach (var item in Model)
-            {
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="card-image-top" src="@item.Image" width="100%" height="225" alt="Card_image_cap" />
-                        <div class="card-body">
-                            <p class="card-text">@item.Name</p>
-                            <p class="card-text">@item.Category</p>
-                            <p class="card-text">@item.Price</p>
-                            <p class="card-text">@item.Volume</p>
-                            <p class="card-text">@item.AlcVolume</p>
-                        </div>
-                        <div class="btn-group">
-                            <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
-                           type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                            <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id"
-                           class="btn btn-sm btn-outline-secondary">Edit</a>
-                            <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id"
-                           class="btn btn-sm btn-outline-secondary">Delete</a>
-                        </div>
-                    </div>
+<main class="main">
+    <a asp-controller="Product" asp-action="Create"
+       type="button" class="button__emp">Add Product</a>
+    <section class="section__employees">
+        @foreach (var item in Model)
+        {
+            <div class="container__product">
+                <img class="product__image" src=@item.Image />
+                <p class="product__paragraph">@item.Name</p>
+                <p class="product__paragraph product__paragraph--small">@item.Category</p>
+                <div class="container__buttons">
+                    <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
+                   type="button" class="container__button container__button--first">View</a>
+                    <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id"
+                   class="container__button">Edit</a>
+                    <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id"
+                   class="container__button container__button--second">Delete</a>
                 </div>
-            }
-        </div>
-    </div>
-</div>
+            </div>
+        }
+    </section>
+</main>
