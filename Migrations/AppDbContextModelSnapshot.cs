@@ -211,13 +211,13 @@ namespace MVCproject.Migrations
 
             modelBuilder.Entity("MVCproject.Models.Order", b =>
                 {
-                    b.HasOne("MVCproject.Models.Product", "Product")
+                    b.HasOne("MVCproject.Models.Product", "ProductsList")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Product");
+                    b.Navigation("ProductsList");
                 });
 #pragma warning restore 612, 618
         }

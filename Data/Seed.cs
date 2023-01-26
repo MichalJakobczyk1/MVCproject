@@ -25,14 +25,14 @@ namespace MVCproject.Data
                         {
                             Name = "John",
                             Surname = "Wick",
-                            SinceWhen = new DateTime(12,12,2008),
+                            SinceWhen = new DateTime(12,12,2008,0,0,0),
                             Nip = "67893412"
                          },
                         new RegularCustomer()
                         {
                             Name = "Jeff",
                             Surname = "Brown",
-                            SinceWhen = new DateTime(8,6,2010),
+                            SinceWhen = new DateTime(8,6,2010,0,0,0),
                             Nip = "78931456"
                          },
                     });
@@ -47,7 +47,6 @@ namespace MVCproject.Data
                 //Roles
                 var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-                //if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
 
                 //Users
@@ -61,9 +60,9 @@ namespace MVCproject.Data
                     {
                         UserName = "michaljakobczyk",
                         Email = adminUserEmail,
-                        EmailConfirmed = true,
+                        EmailConfirmed = true
                     };
-                    await userManager.CreateAsync(newAdminUser, "bar123");
+                    await userManager.CreateAsync(newAdminUser, "bar1234!");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
             }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MVCproject.Models;
 using System.Security.Cryptography;
+using System.Xml;
 
 namespace MVCproject.Data
 {
