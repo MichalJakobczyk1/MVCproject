@@ -1,9 +1,14 @@
-﻿@model IEnumerable<Product>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@model IEnumerable<Product>
 
 <main class="main">
-       <section class="section__buttons">
-        <a asp-controller="Product" asp-action="Create"
+    <section class="section__buttons">
+        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+        {
+            <a asp-controller="Product" asp-action="Create"
            type="button" class="button__emp">Add Product</a>
+        }
 
         <form asp-controller="Product" asp-action="Search" method="get">
             <div class="container">
@@ -30,14 +35,19 @@
                 <img class="product__image" src=@item.Image />
                 <p class="product__paragraph">@item.Name</p>
                 <p class="product__paragraph product__paragraph--small">@item.Category</p>
-                <div class="container__buttons">
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <div class="container__buttons">
                     <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
                    type="button" class="container__button container__button--first">View</a>
                     <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id"
                    class="container__button">Edit</a>
                     <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id"
                    class="container__button container__button--second">Delete</a>
-                </div>
+                    </div>
+
+                }
+
             </div>
         }
     </section>
