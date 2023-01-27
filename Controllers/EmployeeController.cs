@@ -42,6 +42,16 @@ namespace MVCproject.Controllers
                     Surname = createEmployeeViewModel.Surname,
                     ContactNumber = createEmployeeViewModel.ContactNumber,
                     Email = createEmployeeViewModel.Email,
+                    Address = new Address
+                    {
+                        City = createEmployeeViewModel.Address.City,
+                        Street = createEmployeeViewModel.Address.Street,
+                    },
+                    Info = new Info
+                    { 
+                        Role = createEmployeeViewModel.Info.Role,
+                        Level = createEmployeeViewModel.Info.Level
+                    }
                 };
                 _employeeRepository.Add(employee);
                 return RedirectToAction("Index");
@@ -77,6 +87,10 @@ namespace MVCproject.Controllers
                 Surname = employee.Surname,
                 ContactNumber = employee.ContactNumber,
                 Email = employee.Email,
+                AddressId = employee.AddressId,
+                Address = employee.Address,
+                InfoId = employee.InfoId,
+                Info = employee.Info
             };
             return View(employeeViewModel);
         }
@@ -101,6 +115,10 @@ namespace MVCproject.Controllers
                     Surname = editEmployeeViewModel.Surname,
                     ContactNumber = editEmployeeViewModel.ContactNumber,
                     Email = editEmployeeViewModel.Email,
+                    AddressId = editEmployeeViewModel.AddressId,
+                    Address = editEmployeeViewModel.Address,
+                    InfoId = editEmployeeViewModel.InfoId,
+                    Info = editEmployeeViewModel.Info
                 };
 
                 _employeeRepository.Update(emp);

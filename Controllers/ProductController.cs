@@ -43,9 +43,10 @@ namespace MVCproject.Controllers
                     Image = result.Url.ToString(),
                     Name = productViewModel.Name,
                     Description = productViewModel.Description,
-                    Price= productViewModel.Price,
-                    Volume= productViewModel.Volume,
-                    AlcVolume= productViewModel.AlcVolume,
+                    Price = productViewModel.Price,
+                    Volume = productViewModel.Volume,
+                    AlcVolume = productViewModel.AlcVolume,
+                    Category = productViewModel.Category
                 };
                 _productRepository.Add(product);
                 return RedirectToAction("Index");
@@ -86,6 +87,7 @@ namespace MVCproject.Controllers
                 Price = product.Price,
                 Volume = product.Volume,
                 AlcVolume = product.AlcVolume,
+                Category = product.Category
             };
             return View(editProductViewModel);
         }
@@ -125,6 +127,7 @@ namespace MVCproject.Controllers
                     Price = editProductViewModel.Price,
                     Volume = editProductViewModel.Volume,
                     AlcVolume = editProductViewModel.AlcVolume,
+                    Category = editProductViewModel.Category
                 };
 
                 _productRepository.Update(product);

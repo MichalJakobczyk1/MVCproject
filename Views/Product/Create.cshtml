@@ -17,34 +17,34 @@
                 <input asp-for="Image" type="file" class="form__input"  placeholder="Image">
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
-                <div class="form__tile">
+            <div class="form__tile">
                 <label class="form__label" asp-for="Name">Name</label>
                 <input asp-for="Name" class="form__input" placeholder="Name">
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-                <div class="form__tile">
+            <div class="form__tile">
                 <label class="form__label" asp-for="Category">Category</label>
-                <select asp-for="Category" asp-items="@Html.GetEnumSelectList<Products>()" class="form-control form-control-lg">
+                    <select asp-for="Category" asp-items="@Html.GetEnumSelectList<Products>()" class="form__input">
                     <option>--Select--</option>
                 </select>
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
-                <div class="form__tile">
+            <div class="form__tile">
                 <label class="form__label" asp-for="Description">Description</label>
                 <input asp-for="Description" class="form__input" placeholder="Description">
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-                <div class="form__tile">
+            <div class="form__tile">
                 <label class="form__label" asp-for="Price">Price</label>
                 <input asp-for="Price" class="form__input" placeholder="Price">
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
-                <div class="form__tile">
+            <div class="form__tile">
                 <label class="form__label" asp-for="Volume">Volume</label>
                 <input asp-for="Volume"  class="form__input"  placeholder="Volume">
                 <span asp-validation-for="Volume" class="text-danger"></span>
             </div>
-                <div class="form__tile">
+            <div class="form__tile">
                 <label class="form__label" asp-for="AlcVolume">Alcohol Volume</label>
                 <input asp-for="AlcVolume"  class="form__input"  placeholder="Alcohol Volume">
                 <span asp-validation-for="AlcVolume" class="text-danger"></span>

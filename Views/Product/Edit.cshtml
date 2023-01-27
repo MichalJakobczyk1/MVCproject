@@ -26,7 +26,7 @@
                     </div>
                     <div class="form__tile">
                         <label class="form__label" asp-for="Category">Category</label>
-                        <select asp-for="Category" asp-items="@Html.GetEnumSelectList<Products>()" class="form-control form-control-lg">
+                        <select asp-for="Category" asp-items="@Html.GetEnumSelectList<Products>()" class="form__input">
                             <option>--Select--</option>
                         </select>
                         <span asp-validation-for="Category" class="text-danger"></span>

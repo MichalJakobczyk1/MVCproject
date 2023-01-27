@@ -22,6 +22,27 @@ namespace MVCproject.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("MVCproject.Models.Address", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Address");
+                });
+
             modelBuilder.Entity("MVCproject.Models.Employee", b =>
                 {
                     b.Property<int>("Id")
@@ -31,6 +52,9 @@ namespace MVCproject.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AddressId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -52,6 +76,9 @@ namespace MVCproject.Migrations
 
                     b.Property<DateTime>("HiredOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("InfoId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -93,10 +120,14 @@ namespace MVCproject.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AddressId");
+
+                    b.HasIndex("InfoId");
+
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("MVCproject.Models.Order", b =>
+            modelBuilder.Entity("MVCproject.Models.Info", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,26 +135,15 @@ namespace MVCproject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DateOfOrder")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsPaid")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ProductId")
+                    b.Property<int>("Level")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Quantity")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Supplier")
+                    b.Property<int>("Role")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("Orders");
+                    b.ToTable("Info");
                 });
 
             modelBuilder.Entity("MVCproject.Models.Product", b =>
@@ -209,15 +229,23 @@ namespace MVCproject.Migrations
                     b.ToTable("Reservations");
                 });
 
-            modelBuilder.Entity("MVCproject.Models.Order", b =>
+            modelBuilder.Entity("MVCproject.Models.Employee", b =>
                 {
-                    b.HasOne("MVCproject.Models.Product", "ProductsList")
+                    b.HasOne("MVCproject.Models.Address", "Address")
                         .WithMany()
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ProductsList");
+                    b.HasOne("MVCproject.Models.Info", "Info")
+                        .WithMany()
+                        .HasForeignKey("InfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Address");
+
+                    b.Navigation("Info");
                 });
 #pragma warning restore 612, 618
         }

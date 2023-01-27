@@ -189,6 +189,17 @@ a {
     margin: 4px 0;
 }
 
+.form__tile__emp {
+    max-width: 60%;
+    margin: 4px 0;
+    height: 5vh;
+}
+
+.form__input__emp {
+    height: 3vh;
+    max-width: 10vw;
+}
+
 .form__input {
     height: 5vh;
     max-width: 10vw;
@@ -280,7 +291,7 @@ a {
 
 .paragraph__strong {
     font-weight: 700;
-    font-size: 3vh;
+    font-size: 2.5vh;
 }
 
 .paragraph__detail {

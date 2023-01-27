@@ -1,4 +1,5 @@
 ﻿@using MVCproject.ViewModels
+@using MVCproject.Data.Enum
 @model EditEmployeeViewModel
 
 <main class="main">
@@ -10,52 +11,76 @@
             </div>
         </div>
         <form method="post" asp-action="Edit" enctype="multipart/form-data">
-        <div class="container__form">
-                <div class="form__tile">
+            <div class="container__form">
+                <div class="form__tile__emp">
                     <input type="hidden"
                            id="AppUserId"
                            name="AppUserId"
                            asp-for="Id" />
                     <label class="form__label" asp-for="HiredOn">Employee hired on:</label>
                     <input asp-for="HiredOn"
-                           class="form__input"
+                           class="form__input__emp"
                            placeholder="Select date..." />
                     <span asp-validation-for="HiredOn" class="text-danger"></span>
                 </div>
-                <div class="form__tile">
+                <div class="form__tile__emp">
                     <label class="form__label" asp-for="Name">Name</label>
-                    <input asp-for="Name" class="form__input" placeholder="Name" />
+                    <input asp-for="Name" class="form__input__emp" placeholder="Name" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
-                <div class="form__tile">
+                <div class="form__tile__emp">
                     <label class="form__label" asp-for="Surname">Surname</label>
                     <input asp-for="Surname"
-                           class="form__input"
+                           class="form__input__emp"
                            placeholder="Surname" />
                     <span asp-validation-for="Surname" class="text-danger"></span>
                 </div>
-                <div class="form__tile">
+                <div class="form__tile__emp">
                     <label class="form__label" asp-for="DateOfBirth">Date of birth</label>
                     <input asp-for="DateOfBirth"
-                           class="form__input"
+                           class="form__input__emp"
                            placeholder="DateOfBirth" />
                     <span asp-validation-for="DateOfBirth" class="text-danger"></span>
                 </div>
-                <div class="form__tile">
+                <div class="form__tile__emp">
                     <label class="form__label" asp-for="ContactNumber">Contact Number</label>
                     <input asp-for="ContactNumber"
-                           class="form__input"
+                           class="form__input__emp"
                            placeholder="ContactNumber" />
                     <span asp-validation-for="ContactNumber"
                           class="text-danger"></span>
                 </div>
-                <div class="form__tile">
+                <div class="form__tile__emp">
                     <label class="form__label" asp-for="Email">Email</label>
-                    <input asp-for="Email" class="form__input" placeholder="Email" />
+                    <input asp-for="Email" class="form__input__emp" placeholder="Email" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
-                <button type="submit" class="form__sumbit">Edit</button>
-        </div>
+                <div class="form__tile__emp">
+                    <label class="form__label" asp-for="Address.City">City</label>
+                    <input asp-for="Address.City" class="form__input__emp" placeholder="City" />
+                    <span asp-validation-for="Address.City" class="text-danger"></span>
+                </div>
+                <div class="form__tile__emp">
+                    <label class="form__label" asp-for="Address.Street">Street</label>
+                    <input asp-for="Address.Street" class="form__input__emp" placeholder="Street" />
+                    <span asp-validation-for="Address.Street" class="text-danger"></span>
+                </div>
+                <div class="form__tile__emp">
+                    <label class="form__label" asp-for="Info.Role">Role</label>
+                    <select asp-for="Info.Role" asp-items="@Html.GetEnumSelectList<Role>()" class="form__input__emp">
+                        <option>--Select--</option>
+                    </select>
+                    <span asp-validation-for="Info.Role" class="text-danger"></span>
+                </div>
+                <div class="form__tile__emp">
+                    <label class="form__label" asp-for="Info.Level">Level</label>
+                    <select asp-for="Info.Level" asp-items="@Html.GetEnumSelectList<Level>()" class="form__input__emp">
+                        <option>--Select--</option>
+                    </select>
+                    <span asp-validation-for="Info.Level" class="text-danger"></span>
+                </div>
+                <button type="submit" class="form__sumbit">Submit</button>
+            </div>
         </form>
     </section>
 </main>
