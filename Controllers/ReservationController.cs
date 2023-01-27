@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MVCproject.Interfaces;
 using MVCproject.Models;
 using MVCproject.Repositories;
@@ -24,6 +25,7 @@ namespace MVCproject.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(CreateReservationViewModel createReservationViewModel)
         {
@@ -40,6 +42,7 @@ namespace MVCproject.Controllers
             return View(createReservationViewModel);
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var reservationDetail = await _reservationRepository.GetByIdAsync(id);
@@ -47,6 +50,7 @@ namespace MVCproject.Controllers
             return View(reservationDetail);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteReservation(int id)
         {
@@ -56,6 +60,8 @@ namespace MVCproject.Controllers
             _reservationRepository.Delete(reservationDetails);
             return RedirectToAction("Index");
         }
+
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id)
         {
             var reservation = await _reservationRepository.GetByIdAsync(id);
@@ -69,6 +75,7 @@ namespace MVCproject.Controllers
             return View(reservationVM);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Edit(int id, EditReservationViewModel editReservationViewModel)
         {

@@ -40,6 +40,10 @@ a {
 .list__link {
 }
 
+.list__link__login {
+    font-size: 2vh;
+}
+
 .list__link::after {
     content: " ";
     opacity: 0;
@@ -113,6 +117,52 @@ a {
     background-color: aliceblue;
     border-radius: 5%;
     border: 3px solid #1b263b;
+}
+
+.section__register {
+    height: 40vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5e5;
+    border-radius: 5%;
+    border: 3px solid #1b263b;
+}
+
+.section__register__confirm {
+    height: 20vh;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5e5;
+    border-radius: 15px;
+    border: 3px solid #1b263b;
+}
+
+.register__header {
+    font-size: 3vh;
+    text-align: center;
+}
+
+.form__input__register {
+    height: 5vh;
+    max-width: 10vw;
+}
+
+.container__register {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register__link {
+    color: #1b263b;
+    cursor: pointer;
+    font-size: 4vh;
+    text-decoration: underline;
 }
 
 .container__paragraph {

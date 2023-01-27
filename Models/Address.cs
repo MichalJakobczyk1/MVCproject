@@ -1,4 +1,6 @@
-﻿namespace MVCproject.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MVCproject.Models
 {
     public class Address
     {

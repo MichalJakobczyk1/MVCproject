@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVCproject.Models
 {
-    public class Employee : IdentityUser
+    public class Employee
     {
         [Key]
         public int Id { get; set; }
@@ -30,10 +30,10 @@ namespace MVCproject.Models
 
         [ForeignKey("Address")]
         public int AddressId { get; set; }
-        public Address Address { get; set; }
+        public Address? Address { get; set; }
 
         [ForeignKey("Info")]
         public int InfoId { get; set; }
-        public Info Info { get; set; }
+        public Info? Info { get; set; }
     }
 }

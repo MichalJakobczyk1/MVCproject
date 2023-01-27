@@ -11,3 +11,11 @@ ASP service to help you organise your bar!
 - add-migartion InitialCreate in Console package manager
 - update-database in Console package manager
 - Launch and enjoy the project
+
+## Users credentials:
+###Admin:
+Login: michal.jakobczyk2@gmail.com
+Password: Bar123!
+###User:
+Login: user@gmail.com
+Password: User123!

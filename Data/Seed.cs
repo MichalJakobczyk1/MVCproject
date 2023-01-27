@@ -40,32 +40,32 @@ namespace MVCproject.Data
                 }
             }
         }
-        public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
-        {
-            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
-            {
-                //Roles
-                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        //public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
+        //{
+        //    using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+        //    {
+        //        //Roles
+        //        var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+        //            await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
 
-                //Users
-                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<Employee>>();
-                string adminUserEmail = "michaljakobczyk@gmail.com";
+        //        //Users
+        //        var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<Employee>>();
+        //        string adminUserEmail = "michaljakobczyk@gmail.com";
 
-                var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
-                if (adminUser == null)
-                {
-                    var newAdminUser = new Employee()
-                    {
-                        UserName = "michaljakobczyk",
-                        Email = adminUserEmail,
-                        EmailConfirmed = true
-                    };
-                    await userManager.CreateAsync(newAdminUser, "bar1234!");
-                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
-                }
-            }
-        }
+        //        var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
+        //        if (adminUser == null)
+        //        {
+        //            var newAdminUser = new Employee()
+        //            {
+        //                UserName = "michaljakobczyk",
+        //                Email = adminUserEmail,
+        //                EmailConfirmed = true
+        //            };
+        //            await userManager.CreateAsync(newAdminUser, "bar1234!");
+        //            await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
+        //        }
+        //    }
+        //}
     }
 }

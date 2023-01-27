@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVCproject.Data;
 using MVCproject.Interfaces;
@@ -31,6 +32,7 @@ namespace MVCproject.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(CreateEmployeeViewModel createEmployeeViewModel)
         {
@@ -59,6 +61,7 @@ namespace MVCproject.Controllers
             return View(createEmployeeViewModel);
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var employeeDetails = await _employeeRepository.GetByIdAsync(id);
@@ -66,6 +69,7 @@ namespace MVCproject.Controllers
             return View(employeeDetails);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteEmployee(int id)
         {
@@ -76,6 +80,7 @@ namespace MVCproject.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id)
         {
             var employee = await _employeeRepository.GetByIdAsync(id);
@@ -95,6 +100,7 @@ namespace MVCproject.Controllers
             return View(employeeViewModel);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Edit(int id, EditEmployeeViewModel editEmployeeViewModel)
         {
@@ -130,12 +136,14 @@ namespace MVCproject.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Detail(int id)
         { 
             Employee employee = await _employeeRepository.GetByIdAsync(id);
             return View(employee);
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Search(string name, string surname)
         {
             var employee = from m in _context.Employees
@@ -154,11 +162,13 @@ namespace MVCproject.Controllers
             return View(employee.ToList());
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> OrderByName()
         {
             return View(_context.Employees.OrderByDescending(e => e.Name).ToList());
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> OrderBySurname()
         {
             return View(_context.Employees.OrderByDescending(e => e.Surname).ToList());

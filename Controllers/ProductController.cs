@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using MVCproject.Data;
 using MVCproject.Data.Enum;
@@ -26,11 +27,14 @@ namespace MVCproject.Controllers
             IEnumerable<Product> products = await _productRepository.GetAll();
             return View(products);
         }
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(CreateProductViewModel productViewModel)
         {
@@ -58,6 +62,7 @@ namespace MVCproject.Controllers
             return View(productViewModel);
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var productDetails = await _productRepository.GetByIdAsync(id);
@@ -65,6 +70,7 @@ namespace MVCproject.Controllers
             return View(productDetails);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
@@ -75,6 +81,7 @@ namespace MVCproject.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
@@ -92,6 +99,7 @@ namespace MVCproject.Controllers
             return View(editProductViewModel);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Edit(int id, EditProductViewModel editProductViewModel)
         {
