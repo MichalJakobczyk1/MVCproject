@@ -35,18 +35,18 @@
                 <img class="product__image" src=@item.Image />
                 <p class="product__paragraph">@item.Name</p>
                 <p class="product__paragraph product__paragraph--small">@item.Category</p>
-                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-                {
-                    <div class="container__buttons">
-                    <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
-                   type="button" class="container__button container__button--first">View</a>
-                    <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id"
-                   class="container__button">Edit</a>
-                    <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id"
-                   class="container__button container__button--second">Delete</a>
-                    </div>
 
-                }
+                <div class="container__buttons">
+                <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
+                type="button" class="container__button container__button--first">View</a>
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+            {
+                <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id"
+                class="container__button">Edit</a>
+                <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id"
+                class="container__button container__button--second">Delete</a>
+            }
+            </div>
 
             </div>
         }

@@ -24,26 +24,9 @@
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div>
-                <div class="checkbox">
-                    <label asp-for="Input.RememberMe" class="form-label">
-                        <input class="form-check-input" asp-for="Input.RememberMe" />
-                        @Html.DisplayNameFor(m => m.Input.RememberMe)
-                    </label>
-                </div>
             </div>
             <div>
                 <button id="login-submit" type="submit" class="form__sumbit">Log in</button>
-            </div>
-            <div>
-                <p>
-                    <a class="login__link" id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                </p>
-                <p>
-                    <a class="login__link" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                </p>
-                <p>
-                    <a class="login__link" id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                </p>
             </div>
             </div>
         </form>

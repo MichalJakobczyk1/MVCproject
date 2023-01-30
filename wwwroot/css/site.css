@@ -16,6 +16,10 @@ a {
     cursor: pointer;
 }
 
+.login {
+    font-size: 3vh;
+}
+
 .header {
     grid-area: header;
     height: 7vh;
@@ -35,9 +39,6 @@ a {
     align-items: center;
     justify-content: space-around;
     font-size: 3vh;
-}
-
-.list__link {
 }
 
 .list__link__login {
