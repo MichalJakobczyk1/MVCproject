@@ -13,9 +13,9 @@ ASP service to help you organise your bar!
 - Launch and enjoy the project
 
 ## Users credentials:
--Admin:
+- Admin:
 Login: michal.jakobczyk2@gmail.com
 Password: Bar123!
--User:
+- User:
 Login: user@gmail.com
 Password: User123!
