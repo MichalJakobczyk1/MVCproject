@@ -121,7 +121,7 @@ a {
 }
 
 .section__register {
-    height: 40vh;
+    height: 50vh;
     width: 20vw;
     display: flex;
     justify-content: center;
@@ -162,7 +162,7 @@ a {
 .register__link {
     color: #1b263b;
     cursor: pointer;
-    font-size: 4vh;
+    font-size: 3vh;
     text-decoration: underline;
 }
 
@@ -360,6 +360,10 @@ a {
 .paragraph__detail {
     font-size: 2vh;
     padding: 0 16px;
+}
+
+.paragraph__confirm {
+    font-size: 3vh;
 }
 
 .section__delete {
